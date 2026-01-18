@@ -1,0 +1,12 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+<div class = "container">
+    <h2>Оновлення Вiкторини</h2>
+    <form method = "post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type = "submit" class = "btn btn-primary">Оновити Вiкторину</button>
+        <a href = "{% url 'quiz_list' %}" class = "btn btn-secondary">Назад до списку вiкторин</a>
+    </form>
+</div>
+{% endblock %}

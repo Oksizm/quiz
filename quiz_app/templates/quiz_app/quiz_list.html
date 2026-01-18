@@ -1,0 +1,19 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+    <p><a href = "{% url 'quiz_create' %}">Створити</a></p>
+
+    {% for q in quizes %}
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+        </div>
+    </div>
+        <a class = "btn btn-primary" href = "/quiz/{{q.pk}}">{{q.title}}</a>
+    </div>
+    <div>
+        <p>{{q.description}}</p>
+        <img src = "/media/{{q.image}}">
+    </div>
+    {% endfor %}
+</html>
+{% endblock %}

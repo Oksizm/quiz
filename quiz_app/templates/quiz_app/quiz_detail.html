@@ -1,0 +1,15 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+    <h1>Quiz {{quiz.title}}</h1>
+    <p>{{quiz.creator}}</p>
+    <p>{{quiz.description}}</p>
+    {% if quiz.image %}
+    <p><a href = "{{quiz.image}}">Image</a></p>
+    {% endif %}
+    <p><a href = "{% url 'quiz_update' quiz.id %}">Редагувати</a></p>
+    <p><a href = "{% url 'quiz_delete' quiz.id %}">Видалити</a></p>
+    <form method = "post">
+        {% csrf_token %}
+        <button type = "submit">Пройти</button>
+    </form>
+{% endblock %}

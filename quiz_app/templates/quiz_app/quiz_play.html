@@ -1,0 +1,16 @@
+{% extends "quiz_app/base.html" %}
+{% block content %}
+    <h1>Проходження {{quiz_user.quiz.title}}</h1>
+    <p>{{quiz.creator}}</p>
+    <p>{{quiz.description}}</p>
+    {% if quiz.image %}
+    <p><a href = "{{quiz.image}}">Image</a></p>
+    {% endif %}
+    {% for q in quiz_user.quiz.questions.all %}
+    {{q.text}}
+    {% endfor %}
+    {% for a in quiz_user.quiz.answers.all %}
+    {{a.text}}
+    {% endfor %}
+    </form>
+{% endblock %}
